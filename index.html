@@ -1,231 +1,155 @@
-<!--
-Money-Maker Single-File Website
-File: index.html
-Instructions:
-- Replace placeholders (YOUR_NAME, YOUR_COMPANY, YOUR_EMAIL, STRIPE_CHECKOUT_LINK, MAILCHIMP_ACTION_URL, ADSENSE_CLIENT_ID) with your real values.
-- To monetize: connect Stripe (digital product), set up Google AdSense, add affiliate links, and offer a premium subscription.
-- Deploy: push this file to GitHub and host via Netlify / Vercel / GitHub Pages.
--->
-
-<!doctype html>
-<html lang="en">
+           <!DOCTYPE html>
+<html lang="hi">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Money Maker — Turn skills into income</title>
-  <meta name="description" content="Start earning with digital products, memberships, affiliate offers and services. Includes email capture and conversion-optimized layout." />
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
-  <!-- Tailwind CDN for convenience (replace with built CSS for production) -->
-  <script src="https://cdn.tailwindcss.com"></script>
-  <style>
-    body { font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial; }
-    .gradient { background: linear-gradient(90deg,#6EE7B7 0%,#3B82F6 100%); }
-    /* small visual tweaks */
-    .card { background: white; border-radius: 12px; box-shadow: 0 8px 30px rgba(2,6,23,0.08); }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Money Maker Blog | डिजिटल उत्पादों से कमाई</title>
+    <!-- Load Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Configure Tailwind -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'primary-blue': '#1D4ED8',
+                        'secondary-gold': '#F59E0B',
+                        'bg-light': '#F9FAFB',
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+    <style>
+        /* Custom scrollbar for better aesthetics */
+        body::-webkit-scrollbar {
+            width: 8px;
+        }
+        body::-webkit-scrollbar-track {
+            background: #f1f1f1;
+        }
+        body::-webkit-scrollbar-thumb {
+            background: #ccc;
+            border-radius: 4px;
+        }
+        body::-webkit-scrollbar-thumb:hover {
+            background: #999;
+        }
+    </style>
 </head>
-<body class="bg-gray-50 text-gray-900 leading-normal">
+<body class="bg-bg-light font-sans antialiased">
 
-  <!-- HEADER -->
-  <header class="max-w-6xl mx-auto p-6 flex items-center justify-between">
-    <div class="flex items-center gap-3">
-      <div class="w-10 h-10 rounded-full gradient flex items-center justify-center text-white font-bold">$</div>
-      <div>
-        <div class="text-lg font-semibold">Money Maker</div>
-        <div class="text-xs text-gray-500">Monetize your skills & traffic</div>
-      </div>
-    </div>
-    <nav class="flex items-center gap-4">
-      <a href="#how" class="text-sm hover:underline">How it works</a>
-      <a href="#products" class="text-sm hover:underline">Products</a>
-      <a href="#blog" class="text-sm hover:underline">Blog</a>
-      <a href="#contact" class="text-sm bg-gray-900 text-white px-4 py-2 rounded-md">Get started</a>
-    </nav>
-  </header>
-
-  <!-- HERO -->
-  <section class="max-w-6xl mx-auto px-6 py-12 grid md:grid-cols-2 gap-10 items-center">
-    <div>
-      <h1 class="text-4xl md:text-5xl font-extrabold">Build a website that makes money — without headaches</h1>
-      <p class="mt-4 text-lg text-gray-600">Sell digital products, build a membership, promote affiliate offers, or offer services. This template includes email capture and conversion-first design.</p>
-
-      <div class="mt-6 flex gap-3">
-        <a id="cta-buy" href="STRIPE_CHECKOUT_LINK" class="px-6 py-3 rounded-md card font-semibold">Buy the Starter Pack</a>
-        <a href="#lead" class="px-6 py-3 rounded-md border border-gray-200">Get the free guide</a>
-      </div>
-
-      <ul class="mt-6 grid grid-cols-2 gap-3 text-sm text-gray-700">
-        <li>✅ Ready-to-sell digital product outline</li>
-        <li>✅ Email funnel starter (Mailchimp / ConvertKit)</li>
-        <li>✅ Affiliate link slots</li>
-        <li>✅ Monetization checklist</li>
-      </ul>
-    </div>
-
-    <div>
-      <div class="card p-6">
-        <div class="text-sm text-gray-500">Revenue snapshot (example)</div>
-        <div class="mt-4 text-3xl font-bold">$1,842<span class="text-base font-medium text-gray-500"> / month</span></div>
-        <div class="mt-4 grid grid-cols-2 gap-4">
-          <div class="p-3 border rounded-md">
-            <div class="text-xs text-gray-500">Memb. conversions</div>
-            <div class="font-semibold">12</div>
-          </div>
-          <div class="p-3 border rounded-md">
-            <div class="text-xs text-gray-500">Avg. order</div>
-            <div class="font-semibold">$49</div>
-          </div>
+    <!-- Header / Navigation Bar -->
+    <header class="shadow-md bg-white sticky top-0 z-10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center">
+            <a href="#" class="text-2xl font-bold text-primary-blue hover:text-secondary-gold transition duration-300">
+                💰 Money Maker Blog
+            </a>
+            <nav class="hidden md:flex space-x-6">
+                <a href="#" class="text-gray-600 hover:text-primary-blue font-medium transition duration-150">ब्लॉग</a>
+                <a href="#products" class="text-gray-600 hover:text-primary-blue font-medium transition duration-150">उत्पाद</a>
+                <a href="#newsletter" class="text-gray-600 hover:text-primary-blue font-medium transition duration-150">न्यूज़लेटर</a>
+            </nav>
+            <a href="#newsletter" class="md:hidden p-2 rounded-full bg-primary-blue text-white hover:bg-secondary-gold transition duration-300">
+                <!-- Icon for mobile CTA -->
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                </svg>
+            </a>
         </div>
-        <div class="mt-4 text-xs text-gray-600">This is a simulated example — results vary based on traffic and offer quality.</div>
-      </div>
-    </div>
-  </section>
+    </header>
 
-  <!-- HOW IT WORKS -->
-  <section id="how" class="max-w-6xl mx-auto px-6 py-10">
-    <h2 class="text-2xl font-bold">How to earn with this site</h2>
-    <div class="mt-6 grid md:grid-cols-3 gap-6">
-      <article class="card p-6">
-        <h3 class="font-semibold">1) Sell a digital product</h3>
-        <p class="mt-2 text-sm text-gray-600">Ebooks, templates, courses, or one-click downloads. Use Stripe for checkout (demo button top-left).</p>
-      </article>
-      <article class="card p-6">
-        <h3 class="font-semibold">2) Memberships & courses</h3>
-        <p class="mt-2 text-sm text-gray-600">Charge recurring fees for premium content. Use a gated area or member-only RSS + email funnel.</p>
-      </article>
-      <article class="card p-6">
-        <h3 class="font-semibold">3) Affiliate & ads</h3>
-        <p class="mt-2 text-sm text-gray-600">Recommend tools you use. Add affiliate links and optionally Google AdSense for passive revenue.</p>
-      </article>
-    </div>
-  </section>
+    <!-- Main Hero Section - Focus on Value -->
+    <main>
+        <section class="py-16 sm:py-24 bg-primary-blue text-white">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+                <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold mb-4 leading-tight">
+                    सीखें, बनाएँ, कमाएँ: <span class="text-secondary-gold">डिजिटल दुनिया</span> में सफलता
+                </h1>
+                <p class="text-lg sm:text-xl mb-8 opacity-90 max-w-3xl mx-auto">
+                    ई-बुक्स, ऑनलाइन कोर्स और एफिलिएट मार्केटिंग से असली कमाई कैसे करें? हमारे एक्सक्लूसिव गाइड और टूलकिट डाउनलोड करें।
+                </p>
+                <!-- Call to Action (CTA) Button -->
+                <a href="#newsletter" class="inline-block px-8 py-3 text-lg font-semibold bg-secondary-gold text-white rounded-xl shadow-lg hover:bg-yellow-600 transform hover:scale-105 transition duration-300 ease-in-out">
+                    🔥 फ्री ईमेल गाइड अभी पाएं
+                </a>
+            </div>
+        </section>
 
-  <!-- PRODUCTS / AFFILIATES -->
-  <section id="products" class="max-w-6xl mx-auto p-6">
-    <h2 class="text-2xl font-bold">Featured offers</h2>
-    <div class="mt-6 grid md:grid-cols-3 gap-6">
-      <!-- Product card template -->
-      <div class="card p-5">
-        <div class="text-sm text-gray-500">Ebook</div>
-        <h3 class="mt-2 font-semibold">The Quick Launch Guide</h3>
-        <p class="mt-2 text-sm text-gray-600">Step-by-step e-book to launch your first paid product.</p>
-        <div class="mt-4 flex items-center justify-between">
-          <div class="font-bold">$19</div>
-          <div class="flex gap-2">
-            <a href="#" class="text-sm underline">Preview</a>
-            <a href="STRIPE_CHECKOUT_LINK" class="px-3 py-1 rounded-md border">Buy</a>
-          </div>
+        <!-- Featured Products/Content Section -->
+        <section id="products" class="py-16 sm:py-20">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <h2 class="text-3xl font-bold text-center text-gray-800 mb-12">हमारे प्रीमियम डिजिटल उत्पाद</h2>
+                
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <!-- Product Card 1: E-book -->
+                    <div class="bg-white p-6 rounded-2xl shadow-xl hover:shadow-2xl transition duration-300 border-t-4 border-secondary-gold">
+                        <div class="text-4xl mb-4">📚</div>
+                        <h3 class="text-xl font-semibold text-gray-800 mb-2">ई-बुक: 7 दिनों में पहला प्रोडक्ट</h3>
+                        <p class="text-gray-600 mb-4">शुरुआत से लेकर लॉन्च तक की पूरी प्रक्रिया। उन सभी गलतियों से बचें जो नए लोग करते हैं।</p>
+                        <button class="w-full py-2 bg-primary-blue text-white rounded-lg hover:bg-blue-700 font-medium transition duration-150">
+                            खरीदें ($19)
+                        </button>
+                    </div>
+                    
+                    <!-- Product Card 2: Online Course -->
+                    <div class="bg-white p-6 rounded-2xl shadow-xl hover:shadow-2xl transition duration-300 border-t-4 border-primary-blue">
+                        <div class="text-4xl mb-4">🎓</div>
+                        <h3 class="text-xl font-semibold text-gray-800 mb-2">मास्टरक्लास: ईमेल मार्केटिंग</h3>
+                        <p class="text-gray-600 mb-4">एक ऐसी ईमेल लिस्ट बनाएं जो आपको हर महीने लगातार कमाई दे सके।</p>
+                        <button class="w-full py-2 bg-primary-blue text-white rounded-lg hover:bg-blue-700 font-medium transition duration-150">
+                            ज्वाइन करें ($99)
+                        </button>
+                    </div>
+                    
+                    <!-- Product Card 3: Affiliate Guide -->
+                    <div class="bg-white p-6 rounded-2xl shadow-xl hover:shadow-2xl transition duration-300 border-t-4 border-secondary-gold">
+                        <div class="text-4xl mb-4">🔗</div>
+                        <h3 class="text-xl font-semibold text-gray-800 mb-2">एफिलिएट टूलकिट 2024</h3>
+                        <p class="text-gray-600 mb-4">सबसे ज़्यादा कन्वर्ट होने वाले एफिलिएट प्रोग्राम्स और उन्हें प्रमोट करने के गुप्त तरीके।</p>
+                        <button class="w-full py-2 bg-primary-blue text-white rounded-lg hover:bg-blue-700 font-medium transition duration-150">
+                            डाउनलोड ($39)
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Email Collection / Newsletter Section -->
+        <section id="newsletter" class="py-16 sm:py-20 bg-gray-100">
+            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+                <h2 class="text-3xl font-bold text-gray-800 mb-4">🎁 अपनी मुफ्त गाइड प्राप्त करें!</h2>
+                <p class="text-lg text-gray-600 mb-8">
+                    साप्ताहिक न्यूज़लेटर के लिए साइन अप करें और 'टॉप 5 पैसिव इनकम आइडियाज़' की ई-गाइड मुफ्त में पाएं।
+                </p>
+                <form class="flex flex-col sm:flex-row gap-4 max-w-lg mx-auto">
+                    <input type="email" placeholder="अपना ईमेल यहाँ दर्ज करें" required 
+                           class="flex-grow p-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-primary-blue focus:border-primary-blue shadow-md">
+                    <button type="submit" 
+                            class="px-6 py-3 bg-secondary-gold text-white font-semibold rounded-xl shadow-lg hover:bg-yellow-600 transition duration-300 transform hover:scale-105">
+                        साइन अप करें
+                    </button>
+                </form>
+                <p class="text-sm text-gray-500 mt-3">हम आपका ईमेल कभी किसी के साथ साझा नहीं करेंगे।</p>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <p class="text-sm mb-2">&copy; 2025 Money Maker Blog. सर्वाधिकार सुरक्षित।</p>
+            <div class="flex justify-center space-x-4 text-sm">
+                <a href="#" class="hover:text-secondary-gold transition duration-150">गोपनीयता नीति</a>
+                <a href="#" class="hover:text-secondary-gold transition duration-150">नियम और शर्तें</a>
+                <a href="#" class="hover:text-secondary-gold transition duration-150">हमसे संपर्क करें</a>
+            </div>
         </div>
-      </div>
-
-      <div class="card p-5">
-        <div class="text-sm text-gray-500">Affiliate</div>
-        <h3 class="mt-2 font-semibold">Pro Hosting (Affiliate)</h3>
-        <p class="mt-2 text-sm text-gray-600">Recommend hosting with your affiliate link — earns commission per sign-up.</p>
-        <div class="mt-4 flex items-center justify-between">
-          <div class="text-xs text-gray-500">Affiliate</div>
-          <a href="#" class="px-3 py-1 rounded-md border">View</a>
-        </div>
-      </div>
-
-      <div class="card p-5">
-        <div class="text-sm text-gray-500">Consulting</div>
-        <h3 class="mt-2 font-semibold">1:1 Launch Session</h3>
-        <p class="mt-2 text-sm text-gray-600">Charge for a three-hour session to plan and launch a product. Add scheduling link here.</p>
-        <div class="mt-4 flex items-center justify-between">
-          <div class="font-bold">$299</div>
-          <a href="#contact" class="px-3 py-1 rounded-md border">Book</a>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- LEAD MAGNET / EMAIL CAPTURE -->
-  <section id="lead" class="max-w-6xl mx-auto p-6">
-    <div class="card p-6 flex flex-col md:flex-row items-center justify-between gap-6">
-      <div>
-        <h3 class="text-xl font-semibold">Get the free "5-step Launch Checklist"</h3>
-        <p class="mt-2 text-sm text-gray-600">Enter your email and we’ll send the checklist plus a short course sequence.</p>
-      </div>
-      <form id="email-form" action="MAILCHIMP_ACTION_URL" method="post" class="flex gap-2 w-full md:w-auto">
-        <input name="EMAIL" required type="email" placeholder="you@example.com" class="px-4 py-3 rounded-md border w-full md:w-80" />
-        <button class="px-4 py-3 rounded-md card font-semibold">Send me the guide</button>
-      </form>
-    </div>
-  </section>
-
-  <!-- BLOG PREVIEW (SEO CONTENT) -->
-  <section id="blog" class="max-w-6xl mx-auto p-6">
-    <h2 class="text-2xl font-bold">Latest articles</h2>
-    <div class="mt-6 grid md:grid-cols-3 gap-6">
-      <article class="card p-5">
-        <div class="text-xs text-gray-500">SEO</div>
-        <h3 class="mt-2 font-semibold">How to pick an affiliate product</h3>
-        <p class="mt-2 text-sm text-gray-600">Short, useful posts bring organic traffic over time — the best kind of monetization.</p>
-        <a href="#" class="mt-4 inline-block text-sm underline">Read</a>
-      </article>
-      <article class="card p-5">
-        <div class="text-xs text-gray-500">Product</div>
-        <h3 class="mt-2 font-semibold">Create a high-converting product page</h3>
-        <p class="mt-2 text-sm text-gray-600">Design and copy tips to increase conversions on your product pages.</p>
-        <a href="#" class="mt-4 inline-block text-sm underline">Read</a>
-      </article>
-      <article class="card p-5">
-        <div class="text-xs text-gray-500">Growth</div>
-        <h3 class="mt-2 font-semibold">5 traffic sources that still work</h3>
-        <p class="mt-2 text-sm text-gray-600">Organic search, email, partnerships, paid ads, and niche communities.</p>
-        <a href="#" class="mt-4 inline-block text-sm underline">Read</a>
-      </article>
-    </div>
-  </section>
-
-  <!-- CONTACT / FOOTER -->
-  <footer id="contact" class="max-w-6xl mx-auto p-6 mt-10">
-    <div class="grid md:grid-cols-3 gap-6 items-start">
-      <div>
-        <div class="font-semibold">Money Maker</div>
-        <div class="text-sm text-gray-600">Make money online with products, affiliates, & services.</div>
-      </div>
-      <div>
-        <div class="text-sm font-semibold">Contact</div>
-        <div class="text-sm text-gray-600">Email: <a href="mailto:YOUR_EMAIL">YOUR_EMAIL</a></div>
-      </div>
-      <div>
-        <div class="text-sm font-semibold">Quick tips</div>
-        <ul class="text-sm text-gray-600">
-          <li>Write 1 useful blog post / week</li>
-          <li>Use an email welcome series (3-5 emails)</li>
-          <li>Test pricing with small audiences</li>
-        </ul>
-      </div>
-    </div>
-
-    <div class="mt-6 text-xs text-gray-500">© <span id="year"></span> Money Maker. Built with a focus on conversions.</div>
-  </footer>
-
-  <script>
-    // small helpers & placeholders
-    document.getElementById('year').textContent = new Date().getFullYear();
-
-    // CTA behavior: if STRIPE_CHECKOUT_LINK is not set, warn in console
-    const cta = document.getElementById('cta-buy');
-    if (cta && cta.getAttribute('href') === 'STRIPE_CHECKOUT_LINK') {
-      cta.addEventListener('click', function(e){
-        e.preventDefault();
-        alert('Replace STRIPE_CHECKOUT_LINK with your Stripe checkout URL in the HTML.');
-      });
-    }
-
-    // Simple form handler fallback (if no Mailchimp action set)
-    const form = document.getElementById('email-form');
-    if (form && form.getAttribute('action') === 'MAILCHIMP_ACTION_URL') {
-      form.addEventListener('submit', function(e){
-        e.preventDefault();
-        alert('Replace MAILCHIMP_ACTION_URL with your list provider form action to capture emails.');
-      });
-    }
-  </script>
+    </footer>
 
 </body>
 </html>
