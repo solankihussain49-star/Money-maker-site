@@ -1,0 +1,231 @@
+<!--
+Money-Maker Single-File Website
+File: index.html
+Instructions:
+- Replace placeholders (YOUR_NAME, YOUR_COMPANY, YOUR_EMAIL, STRIPE_CHECKOUT_LINK, MAILCHIMP_ACTION_URL, ADSENSE_CLIENT_ID) with your real values.
+- To monetize: connect Stripe (digital product), set up Google AdSense, add affiliate links, and offer a premium subscription.
+- Deploy: push this file to GitHub and host via Netlify / Vercel / GitHub Pages.
+-->
+
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Money Maker — Turn skills into income</title>
+  <meta name="description" content="Start earning with digital products, memberships, affiliate offers and services. Includes email capture and conversion-optimized layout." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+  <!-- Tailwind CDN for convenience (replace with built CSS for production) -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    body { font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial; }
+    .gradient { background: linear-gradient(90deg,#6EE7B7 0%,#3B82F6 100%); }
+    /* small visual tweaks */
+    .card { background: white; border-radius: 12px; box-shadow: 0 8px 30px rgba(2,6,23,0.08); }
+  </style>
+</head>
+<body class="bg-gray-50 text-gray-900 leading-normal">
+
+  <!-- HEADER -->
+  <header class="max-w-6xl mx-auto p-6 flex items-center justify-between">
+    <div class="flex items-center gap-3">
+      <div class="w-10 h-10 rounded-full gradient flex items-center justify-center text-white font-bold">$</div>
+      <div>
+        <div class="text-lg font-semibold">Money Maker</div>
+        <div class="text-xs text-gray-500">Monetize your skills & traffic</div>
+      </div>
+    </div>
+    <nav class="flex items-center gap-4">
+      <a href="#how" class="text-sm hover:underline">How it works</a>
+      <a href="#products" class="text-sm hover:underline">Products</a>
+      <a href="#blog" class="text-sm hover:underline">Blog</a>
+      <a href="#contact" class="text-sm bg-gray-900 text-white px-4 py-2 rounded-md">Get started</a>
+    </nav>
+  </header>
+
+  <!-- HERO -->
+  <section class="max-w-6xl mx-auto px-6 py-12 grid md:grid-cols-2 gap-10 items-center">
+    <div>
+      <h1 class="text-4xl md:text-5xl font-extrabold">Build a website that makes money — without headaches</h1>
+      <p class="mt-4 text-lg text-gray-600">Sell digital products, build a membership, promote affiliate offers, or offer services. This template includes email capture and conversion-first design.</p>
+
+      <div class="mt-6 flex gap-3">
+        <a id="cta-buy" href="STRIPE_CHECKOUT_LINK" class="px-6 py-3 rounded-md card font-semibold">Buy the Starter Pack</a>
+        <a href="#lead" class="px-6 py-3 rounded-md border border-gray-200">Get the free guide</a>
+      </div>
+
+      <ul class="mt-6 grid grid-cols-2 gap-3 text-sm text-gray-700">
+        <li>✅ Ready-to-sell digital product outline</li>
+        <li>✅ Email funnel starter (Mailchimp / ConvertKit)</li>
+        <li>✅ Affiliate link slots</li>
+        <li>✅ Monetization checklist</li>
+      </ul>
+    </div>
+
+    <div>
+      <div class="card p-6">
+        <div class="text-sm text-gray-500">Revenue snapshot (example)</div>
+        <div class="mt-4 text-3xl font-bold">$1,842<span class="text-base font-medium text-gray-500"> / month</span></div>
+        <div class="mt-4 grid grid-cols-2 gap-4">
+          <div class="p-3 border rounded-md">
+            <div class="text-xs text-gray-500">Memb. conversions</div>
+            <div class="font-semibold">12</div>
+          </div>
+          <div class="p-3 border rounded-md">
+            <div class="text-xs text-gray-500">Avg. order</div>
+            <div class="font-semibold">$49</div>
+          </div>
+        </div>
+        <div class="mt-4 text-xs text-gray-600">This is a simulated example — results vary based on traffic and offer quality.</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- HOW IT WORKS -->
+  <section id="how" class="max-w-6xl mx-auto px-6 py-10">
+    <h2 class="text-2xl font-bold">How to earn with this site</h2>
+    <div class="mt-6 grid md:grid-cols-3 gap-6">
+      <article class="card p-6">
+        <h3 class="font-semibold">1) Sell a digital product</h3>
+        <p class="mt-2 text-sm text-gray-600">Ebooks, templates, courses, or one-click downloads. Use Stripe for checkout (demo button top-left).</p>
+      </article>
+      <article class="card p-6">
+        <h3 class="font-semibold">2) Memberships & courses</h3>
+        <p class="mt-2 text-sm text-gray-600">Charge recurring fees for premium content. Use a gated area or member-only RSS + email funnel.</p>
+      </article>
+      <article class="card p-6">
+        <h3 class="font-semibold">3) Affiliate & ads</h3>
+        <p class="mt-2 text-sm text-gray-600">Recommend tools you use. Add affiliate links and optionally Google AdSense for passive revenue.</p>
+      </article>
+    </div>
+  </section>
+
+  <!-- PRODUCTS / AFFILIATES -->
+  <section id="products" class="max-w-6xl mx-auto p-6">
+    <h2 class="text-2xl font-bold">Featured offers</h2>
+    <div class="mt-6 grid md:grid-cols-3 gap-6">
+      <!-- Product card template -->
+      <div class="card p-5">
+        <div class="text-sm text-gray-500">Ebook</div>
+        <h3 class="mt-2 font-semibold">The Quick Launch Guide</h3>
+        <p class="mt-2 text-sm text-gray-600">Step-by-step e-book to launch your first paid product.</p>
+        <div class="mt-4 flex items-center justify-between">
+          <div class="font-bold">$19</div>
+          <div class="flex gap-2">
+            <a href="#" class="text-sm underline">Preview</a>
+            <a href="STRIPE_CHECKOUT_LINK" class="px-3 py-1 rounded-md border">Buy</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="card p-5">
+        <div class="text-sm text-gray-500">Affiliate</div>
+        <h3 class="mt-2 font-semibold">Pro Hosting (Affiliate)</h3>
+        <p class="mt-2 text-sm text-gray-600">Recommend hosting with your affiliate link — earns commission per sign-up.</p>
+        <div class="mt-4 flex items-center justify-between">
+          <div class="text-xs text-gray-500">Affiliate</div>
+          <a href="#" class="px-3 py-1 rounded-md border">View</a>
+        </div>
+      </div>
+
+      <div class="card p-5">
+        <div class="text-sm text-gray-500">Consulting</div>
+        <h3 class="mt-2 font-semibold">1:1 Launch Session</h3>
+        <p class="mt-2 text-sm text-gray-600">Charge for a three-hour session to plan and launch a product. Add scheduling link here.</p>
+        <div class="mt-4 flex items-center justify-between">
+          <div class="font-bold">$299</div>
+          <a href="#contact" class="px-3 py-1 rounded-md border">Book</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- LEAD MAGNET / EMAIL CAPTURE -->
+  <section id="lead" class="max-w-6xl mx-auto p-6">
+    <div class="card p-6 flex flex-col md:flex-row items-center justify-between gap-6">
+      <div>
+        <h3 class="text-xl font-semibold">Get the free "5-step Launch Checklist"</h3>
+        <p class="mt-2 text-sm text-gray-600">Enter your email and we’ll send the checklist plus a short course sequence.</p>
+      </div>
+      <form id="email-form" action="MAILCHIMP_ACTION_URL" method="post" class="flex gap-2 w-full md:w-auto">
+        <input name="EMAIL" required type="email" placeholder="you@example.com" class="px-4 py-3 rounded-md border w-full md:w-80" />
+        <button class="px-4 py-3 rounded-md card font-semibold">Send me the guide</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- BLOG PREVIEW (SEO CONTENT) -->
+  <section id="blog" class="max-w-6xl mx-auto p-6">
+    <h2 class="text-2xl font-bold">Latest articles</h2>
+    <div class="mt-6 grid md:grid-cols-3 gap-6">
+      <article class="card p-5">
+        <div class="text-xs text-gray-500">SEO</div>
+        <h3 class="mt-2 font-semibold">How to pick an affiliate product</h3>
+        <p class="mt-2 text-sm text-gray-600">Short, useful posts bring organic traffic over time — the best kind of monetization.</p>
+        <a href="#" class="mt-4 inline-block text-sm underline">Read</a>
+      </article>
+      <article class="card p-5">
+        <div class="text-xs text-gray-500">Product</div>
+        <h3 class="mt-2 font-semibold">Create a high-converting product page</h3>
+        <p class="mt-2 text-sm text-gray-600">Design and copy tips to increase conversions on your product pages.</p>
+        <a href="#" class="mt-4 inline-block text-sm underline">Read</a>
+      </article>
+      <article class="card p-5">
+        <div class="text-xs text-gray-500">Growth</div>
+        <h3 class="mt-2 font-semibold">5 traffic sources that still work</h3>
+        <p class="mt-2 text-sm text-gray-600">Organic search, email, partnerships, paid ads, and niche communities.</p>
+        <a href="#" class="mt-4 inline-block text-sm underline">Read</a>
+      </article>
+    </div>
+  </section>
+
+  <!-- CONTACT / FOOTER -->
+  <footer id="contact" class="max-w-6xl mx-auto p-6 mt-10">
+    <div class="grid md:grid-cols-3 gap-6 items-start">
+      <div>
+        <div class="font-semibold">Money Maker</div>
+        <div class="text-sm text-gray-600">Make money online with products, affiliates, & services.</div>
+      </div>
+      <div>
+        <div class="text-sm font-semibold">Contact</div>
+        <div class="text-sm text-gray-600">Email: <a href="mailto:YOUR_EMAIL">YOUR_EMAIL</a></div>
+      </div>
+      <div>
+        <div class="text-sm font-semibold">Quick tips</div>
+        <ul class="text-sm text-gray-600">
+          <li>Write 1 useful blog post / week</li>
+          <li>Use an email welcome series (3-5 emails)</li>
+          <li>Test pricing with small audiences</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="mt-6 text-xs text-gray-500">© <span id="year"></span> Money Maker. Built with a focus on conversions.</div>
+  </footer>
+
+  <script>
+    // small helpers & placeholders
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // CTA behavior: if STRIPE_CHECKOUT_LINK is not set, warn in console
+    const cta = document.getElementById('cta-buy');
+    if (cta && cta.getAttribute('href') === 'STRIPE_CHECKOUT_LINK') {
+      cta.addEventListener('click', function(e){
+        e.preventDefault();
+        alert('Replace STRIPE_CHECKOUT_LINK with your Stripe checkout URL in the HTML.');
+      });
+    }
+
+    // Simple form handler fallback (if no Mailchimp action set)
+    const form = document.getElementById('email-form');
+    if (form && form.getAttribute('action') === 'MAILCHIMP_ACTION_URL') {
+      form.addEventListener('submit', function(e){
+        e.preventDefault();
+        alert('Replace MAILCHIMP_ACTION_URL with your list provider form action to capture emails.');
+      });
+    }
+  </script>
+
+</body>
+</html>
